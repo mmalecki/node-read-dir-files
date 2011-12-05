@@ -2,8 +2,12 @@
   "author": "Maciej Małecki <maciej.malecki@notimplemented.org>",
   "name": "read-dir-files",
   "description": "Recursively read files from a directory",
-  "keywords": ["fs", "recursive", "file"],
-  "version": "0.0.0",
+  "keywords": [
+    "fs",
+    "recursive",
+    "file"
+  ],
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/mmalecki/node-read-dir-files.git"
@@ -17,4 +21,3 @@
     "vows": "0.6.x"
   }
 }
-
