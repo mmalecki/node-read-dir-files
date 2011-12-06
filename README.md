@@ -1,4 +1,4 @@
-# read-dir-files 
+# read-dir-files [![Build Status](https://secure.travis-ci.org/mmalecki/node-read-dir-files.png)](http://travis-ci.org/mmalecki/node-read-dir-files)
 
 Module for recursively (and non-recursively) reading all files in a directory.
 
