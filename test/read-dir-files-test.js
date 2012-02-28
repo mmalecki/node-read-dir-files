@@ -3,11 +3,11 @@ var path = require('path'),
     vows = require('vows'),
     readDirFiles = require('../');
 
-vows.describe('read-dir-files').addBatch({
+vows.describe('read-dir-files/read').addBatch({
   'When using `read-dir-files`': {
-    'and reading a directory (`readDirFiles("dir", cb)`)': {
+    'and reading a directory (`readDirFiles.read("dir", cb)`)': {
       topic: function () {
-        readDirFiles(path.join(__dirname, 'fixtures', 'dir'), this.callback);
+        readDirFiles.read(path.join(__dirname, 'fixtures', 'dir'), this.callback);
       },
       'it should contain all files': function (data) {
         assert.isObject(data);
@@ -23,9 +23,9 @@ vows.describe('read-dir-files').addBatch({
         });
       }
     },
-    'and reading a directory (`readDirFiles("dir", "utf8", cb)`)': {
+    'and reading a directory (`readDirFiles.read("dir", "utf8", cb)`)': {
       topic: function () {
-        readDirFiles(
+        readDirFiles.read(
           path.join(__dirname, 'fixtures', 'dir'),
           'utf8',
           this.callback
@@ -45,9 +45,9 @@ vows.describe('read-dir-files').addBatch({
         });
       }
     },
-    'and non-recursively reading a directory (`readDirFiles("dir", false, cb)`)': {
+    'and non-recursively reading a directory (`readDirFiles.read("dir", false, cb)`)': {
       topic: function () {
-        readDirFiles(
+        readDirFiles.read(
           path.join(__dirname, 'fixtures', 'dir'),
           false,
           this.callback
