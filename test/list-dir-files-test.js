@@ -61,6 +61,21 @@ vows.describe('read-dir-files/list').addBatch({
           }));          
         }
       },
+      "with a filter function": {
+        topic: function () {
+          readDirFiles.list(targetDir, { 
+            filter: function (file) {
+              return !/\/sub/.test(file);
+            }
+          }, this.callback);
+        },
+        'it should contain only files matching the filter': function (data) {
+          assert.isArray(data);
+          assertIncludesAll(data, list.slice(0, list.length - 3).map(function (entry) {
+            return path.join(__dirname, 'fixtures', entry);
+          }));          
+        }
+      },
       "when using events": {
         "the `directory` event": {
           topic: function () {
