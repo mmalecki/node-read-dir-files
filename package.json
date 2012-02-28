@@ -2,6 +2,9 @@
   "author": "Maciej Małecki <maciej.malecki@notimplemented.org>",
   "name": "read-dir-files",
   "description": "Recursively read files from a directory",
+  "contributors": [
+    { "name": "Charlie Robbins", "email": "charlie@nodejitsu.com" }
+  ],
   "keywords": [
     "fs",
     "recursive",
