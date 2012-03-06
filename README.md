@@ -9,14 +9,20 @@ Module for recursively (and non-recursively) reading all files in a directory.
 ## Usage
 ```js
   var readDirFiles = require('read-dir-files');
-  readDirFiles('directory', function (err, files) {
+
+  readDirFiles.list('directory', function (err, filenames) {
+    if (err) return console.dir(err);
+    console.dir(filenames);
+  });
+
+  readDirFiles.read('directory', function (err, files) {
     if (err) return console.dir(err);
     console.dir(files);
   });
 
 ```
 
-### readDirFiles(dir, encoding, recursive, callback)
+### readDirFiles.read(dir, encoding, recursive, callback)
 
 Parameters:
 
@@ -42,3 +48,24 @@ in form:
 
 If you pass it the encoding, instead of buffers you'll get strings.
 
+### readDirFiles.list(dir, options, callback)
+
+Parameters:
+
+  * `dir` Directory to read filenames from
+  * `options` Files encoding. **Optional.**
+    * `options.recursive` Recurses subdirectories.
+    * `options.normalize` Normalizes filenames.
+  * `recursive` Recurse into subdirectories? **Optional**, default `true`.
+  * `callback` Callback. **Optional.**
+
+Asynchronously reads all filenames from `dir` and returns them to the callback
+in form:
+
+```json
+[
+  'dir',
+  'file0',
+  'file1'
+]
+```
