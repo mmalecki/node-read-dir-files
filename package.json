@@ -19,7 +19,7 @@
     "node": ">= 0.4"
   },
   "scripts": {
-    "test": "vows --isolate --spec"
+    "test": "vows --spec"
   },
   "main": "./lib/read-dir-files",
   "dependencies": {
