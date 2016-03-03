@@ -34,7 +34,7 @@ Parameters:
 Asynchronously reads all files from `dir` and returns them to the callback
 in form:
 
-```json
+```
 {
    dir: {
      file0: <Buffer ...>,
@@ -64,8 +64,8 @@ in form:
 
 ```json
 [
-  'dir',
-  'file0',
-  'file1'
+  "dir",
+  "file0",
+  "file1"
 ]
 ```
